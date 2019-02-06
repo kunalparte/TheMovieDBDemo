@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".movies.views.MoviesDetailActivity"
+    android:background="@color/raisin_black">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="320dp"
+        android:id="@+id/moviesDetailImageView"
+        android:background="@color/black"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_default"
+        android:id="@+id/movieTitleTextVew"
+        style="@style/font_text_20_white"
+        android:gravity="left|center"
+        android:maxLines="2"
+        android:text="Django Unchained"
+        android:layout_below="@+id/moviesDetailImageView"
+        android:textStyle="bold"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/movieTitleTextVew"
+        >
+
+        <TextView
+            style="@style/font_text_16_white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="Overview"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_default"
+            android:layout_marginRight="@dimen/margin_default"
+            android:id="@+id/movieDescTextView"
+            style="@style/font_text_14_grey"
+            android:gravity="left|center"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="@dimen/margin_default">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/movieDateTextVew"
+            style="@style/font_text_12_white"
+            android:gravity="left|center"
+            android:text="2018-19-10"
+            />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/isAdTitleTextVew"
+                style="@style/font_text_12_white"
+                android:gravity="left|center"
+                android:layout_marginLeft="@dimen/margin_default"
+                android:text="isAdult"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/movieVotesTextVew"
+                style="@style/font_text_12_white"
+                android:gravity="left|center"
+                android:layout_marginLeft="@dimen/margin_default"
+                android:text="433"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

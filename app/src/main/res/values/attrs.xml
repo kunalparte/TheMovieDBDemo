@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--textView attrs-->
+    <attr name="textViewTextColor" format="reference"/>
+
+    <!--editText attrs-->
+    <attr name="editTextTextSize" format="reference"/>
+    <attr name="editTextTextColor" format="reference"/>
+    <attr name="editTextHintTextColor" format="reference"/>
+    <attr name="editTextBackground" format="reference"/>
+
+    <!--button attrs-->
+    <attr name="buttonTextColor" format="reference"/>
+    <attr name="buttonTextSize" format="reference"/>
+
+    <!--toolbar attrs-->
+    <attr name="toolBarTextColor" format="reference"/>
+
+    <attr name="textView_grey_14sp_style" format="reference"/>
+    <attr name="textView_white_14sp_style" format="reference"/>
+
+    <attr name="textView_white_20sp" format="reference"/>
+
+    <attr name="textView_grey_12sp_style" format="reference"/>
+    <attr name="textView_white_12sp_style" format="reference"/>
+    <attr name="edittext_style" format="reference"/>
+</resources>

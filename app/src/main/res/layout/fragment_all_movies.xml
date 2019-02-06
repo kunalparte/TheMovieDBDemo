@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".movies.views.AllMoviesFragment"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:layout_alignParentTop="true"
+        android:layout_margin="@dimen/font_16sp"
+        android:background="@color/white"
+        android:id="@+id/searchedEitTextLay">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:id="@+id/searchEditText"
+            android:textSize="@dimen/font_14sp"
+            android:textColor="@color/darker_gray"
+            android:background="@color/white"
+            android:hint="@string/search"/>
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/moviewListRecyclerView"
+        android:layout_below="@+id/searchedEitTextLay"
+        android:background="@color/raisin_black">
+    </android.support.v7.widget.RecyclerView>
+
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:id="@+id/progressBar"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/margin_default"
+        android:visibility="gone"/>
+
+</RelativeLayout>
