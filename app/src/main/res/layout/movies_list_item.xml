@@ -43,6 +43,7 @@
                     android:layout_marginBottom="4dp"
                     android:text="Overview"
                     android:textStyle="bold"
+                    android:singleLine="true"
                     android:id="@+id/titleTextView"
                     />
 
@@ -55,6 +56,7 @@
                     style="@style/font_text_12_white"
                     android:gravity="left|center"
                     android:text="@string/search"
+                    android:singleLine="true"
                     />
             </LinearLayout>
 
