@@ -62,7 +62,6 @@
             android:id="@+id/movieDateTextVew"
             style="@style/font_text_12_white"
             android:gravity="left|center"
-            android:text="2018-19-10"
             />
 
             <TextView
@@ -72,7 +71,6 @@
                 style="@style/font_text_12_white"
                 android:gravity="left|center"
                 android:layout_marginLeft="@dimen/margin_default"
-                android:text="isAdult"
                 />
 
             <TextView
@@ -82,7 +80,6 @@
                 style="@style/font_text_12_white"
                 android:gravity="left|center"
                 android:layout_marginLeft="@dimen/margin_default"
-                android:text="433"
                 />
         </LinearLayout>
     </LinearLayout>

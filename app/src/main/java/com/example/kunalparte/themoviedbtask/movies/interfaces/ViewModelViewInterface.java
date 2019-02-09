@@ -1,5 +1,7 @@
 package com.example.kunalparte.themoviedbtask.movies.interfaces;
 
+import android.arch.paging.PagedList;
+
 import com.example.kunalparte.themoviedbtask.movies.models.Movies;
 
 import java.util.List;

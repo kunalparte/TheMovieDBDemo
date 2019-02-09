@@ -92,8 +92,8 @@ public class MoviesListAdapter extends RecyclerView.Adapter<MoviesListAdapter.VH
         movies = new ArrayList<>(moviesList);
     }
 
-    public void setPaginatedList(List<Movies> movies){
-        movies.addAll(movies);
+    public void setPaginatedList(List<Movies> moviesList){
+        movies.addAll(moviesList);
     }
 
     public class VHolder extends RecyclerView.ViewHolder implements View.OnClickListener {

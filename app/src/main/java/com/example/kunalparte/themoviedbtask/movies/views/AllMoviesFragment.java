@@ -59,7 +59,7 @@ public class AllMoviesFragment extends Fragment implements ViewModelViewInterfac
     private ViewModelDataProvider viewModelDataProvider;
     private List<Movies> allMoviesList;
     private List<Movies> searchedMoviesList;
-    private int pageCount = 1;
+    public int pageCount = 1;
     private boolean search = false;
 
     private boolean isLoading = false;
@@ -102,9 +102,11 @@ public class AllMoviesFragment extends Fragment implements ViewModelViewInterfac
         moviewRecyclerView.setLayoutManager(staggeredGridLayoutManager);
         searchedEditText.addTextChangedListener(this);
         viewModelDataProvider.getMovies(pageCount);
-        viewModelDataProvider.getAllMovies();
+        viewModelDataProvider.getAllMovi(offset,20);
         sharedPreferences = getActivity().getSharedPreferences("Movies",Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
+        Consts.isDataUpdated = false;
+
     }
 
     public void setDataOnRecyclerView(List<Movies> movies){
@@ -114,7 +116,9 @@ public class AllMoviesFragment extends Fragment implements ViewModelViewInterfac
             moviewRecyclerView.setAdapter(moviesListAdapter);
         }else {
             allMoviesList.addAll(movies);
-            moviesListAdapter.setPaginatedList(movies);
+            if (allMoviesList.size() > movies.size()) {
+                moviesListAdapter.setPaginatedList(movies);
+            }
         }
         moviesListAdapter.notifyDataSetChanged();
         isLoading = false;
@@ -125,20 +129,21 @@ public class AllMoviesFragment extends Fragment implements ViewModelViewInterfac
         moviesListAdapter.notifyDataSetChanged();
     }
 
-
-
     public void onRecyclerScrolled(){
         moviewRecyclerView.addOnScrollListener(new ScrollToPaginateListener(staggeredGridLayoutManager) {
             @Override
             protected void loadMore() {
                 isLoading = true;
-                pageCount = Consts.pageCount + 1;
-                if (pageCount > sharedPreferences.getInt("pageCount", 0)){
-                viewModelDataProvider.getMovies(pageCount);
-                viewModelDataProvider.getAllMovi(offset, rowCount);
-                editor.putInt("pageCount", pageCount).apply();
+                Consts.pageCount++;
+                offset = pageCount * 20;
+                pageCount = Consts.pageCount;
+                if (pageCount > sharedPreferences.getInt("pageCount", 1)) {
+                    viewModelDataProvider.getMovies(pageCount);
+                    editor.putInt("pageCount", pageCount).apply();
+                    Consts.isDataUpdated = false;
+                }else {
+                    viewModelDataProvider.getAllMovi(offset, rowCount);
                 }
-
             }
 
             @Override

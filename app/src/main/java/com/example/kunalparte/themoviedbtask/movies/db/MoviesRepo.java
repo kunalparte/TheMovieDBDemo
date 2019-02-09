@@ -87,6 +87,7 @@ public class MoviesRepo {
                 MoviesMain main = response.body();
                 insert(main.getResults());
                 Consts.pageCount = main.getPage();
+                Consts.isDataUpdated = true;
             }
 
             @Override

@@ -22,4 +22,6 @@ public class Consts {
     public static final String MOVIE_KEY = "moviesKey";
 
     public static int pageCount = 1;
+
+    public static boolean isDataUpdated = false;
 }

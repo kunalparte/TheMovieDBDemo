@@ -73,10 +73,18 @@ public class MoviesDetailActivity extends AppCompatActivity implements ViewModel
             moviesTitle.setText(movies.getTitle());
             moviesDesc.setText(movies.getOverview());
             moviesDate.setText(movies.getRelease_date());
-            isAdultTextView.setText(movies.isAdult());
+            isAdultTextView.setCompoundDrawablePadding(4);
+            if (movies.isAdult().equals("true")) {
+                isAdultTextView.setText("Adult");
+                isAdultTextView.setCompoundDrawablesWithIntrinsicBounds(R.drawable.plus_18_movie, 0, 0, 0);
+            }else{
+                isAdultTextView.setText("Not adultAdult");
+                    isAdultTextView.setCompoundDrawablesWithIntrinsicBounds(R.drawable.family,0,0,0);
+                }
             moviesVites.setText(""+movies.getVote_count());
         }
     }
+
 
     @Override
     public void showFooter(boolean show) {

@@ -19,7 +19,7 @@ import javax.sql.DataSource;
 @Dao
 public interface MoviesDao {
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     void insert(List<Movies> movies);
 
     @Query("Select * from "+ Consts.MOVIES_TABLE)

@@ -9,6 +9,7 @@ import android.support.annotation.Nullable;
 
 import com.example.kunalparte.themoviedbtask.movies.interfaces.ViewModelViewInterface;
 import com.example.kunalparte.themoviedbtask.movies.models.Movies;
+import com.example.kunalparte.themoviedbtask.utils.Consts;
 
 import java.util.List;
 
@@ -42,6 +43,7 @@ public class ViewModelDataProvider {
         moviesViewModel.getAllMovies().observe((LifecycleOwner) activity, new Observer<List<Movies>>() {
             @Override
             public void onChanged(@Nullable List<Movies> movies) {
+                if (Consts.pageCount ==1)
                 viewModelViewInterface.getMovies(movies);
             }
         });
@@ -59,15 +61,6 @@ public class ViewModelDataProvider {
             }
         });
     }
-
-//    public void getAllMovies(){
-//        moviesViewModel.getAllMovies().observe((LifecycleOwner) activity, new Observer<PagedList<Movies>>() {
-//            @Override
-//            public void onChanged(@Nullable PagedList<Movies> movies) {
-//                viewModelViewInterface.getMovies(movies);
-//            }
-//        });
-//    }
 
     public void getSearchedMoviesList(String name){
         moviesViewModel.getSearchedList(name).observe((LifecycleOwner) activity, new Observer<List<Movies>>() {
