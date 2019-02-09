@@ -199,7 +199,12 @@ public class AllMoviesFragment extends Fragment implements ViewModelViewInterfac
     @Override
     public void onrecyclerViewItemClicked(int position) {
         Intent intent = new Intent(getActivity(),MoviesDetailActivity.class);
-        intent.putExtra(Consts.MOVIE_KEY, allMoviesList.get(position).getId());
+        if (search){
+            intent.putExtra(Consts.MOVIE_KEY, searchedMoviesList.get(position).getId());
+
+        }else {
+            intent.putExtra(Consts.MOVIE_KEY, allMoviesList.get(position).getId());
+        }
         startActivity(intent);
     }
 
