@@ -125,6 +125,7 @@ public class AllMoviesFragment extends Fragment implements ViewModelViewInterfac
     }
 
     public void setSearchedDataOnRecyclerView(List<Movies> movies){
+        searchedMoviesList = new ArrayList<>(movies);
         moviesListAdapter.setFilteredList(movies);
         moviesListAdapter.notifyDataSetChanged();
     }
